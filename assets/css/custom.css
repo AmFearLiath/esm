@@ -1,0 +1,238 @@
+/* Farbvariablen aus core.css (Bootstrap) für eigene Nutzung */
+[data-bs-theme="dark"] {
+  --esm-primary: var(--bs-primary, #0d6efd);
+  --esm-secondary: var(--bs-secondary, #6c757d);
+  --esm-success: var(--bs-success, #198754);
+  --esm-danger: var(--bs-danger, #dc3545);
+  --esm-warning: var(--bs-warning, #ffc107);
+  --esm-info: var(--bs-info, #0dcaf0);
+  --esm-light: var(--bs-light, #f8f9fa);
+  --esm-dark: var(--bs-dark, #212529);
+  --esm-bg: var(--bs-body-bg, #181c24);
+  --esm-bg-content-rgb: 0, 0, 0;
+  --esm-content-boxshadow-rgb: 0, 0, 0;
+  --esm-slidecontrol-background-rgb: 0, 0, 0;
+  --esm-slidecontrol-button: white;
+  --esm-slidecontrol-button-hover-rgb: 0, 0, 0;
+  --esm-logo-background-rgb: 255, 255, 255;
+  --esm-logo-shadow: white;
+  --esm-option-background: rgba(0, 0, 0, 0.8);
+}
+
+[data-bs-theme="light"] {
+  --esm-primary: var(--bs-primary, #0d6efd);
+  --esm-secondary: var(--bs-secondary, #6c757d);
+  --esm-success: var(--bs-success, #198754);
+  --esm-danger: var(--bs-danger, #dc3545);
+  --esm-warning: var(--bs-warning, #ffc107);
+  --esm-info: var(--bs-info, #0dcaf0);
+  --esm-light: var(--bs-light, #f8f9fa);
+  --esm-dark: var(--bs-dark, #212529);
+  --esm-bg: var(--bs-body-bg, #181c24);
+  --esm-bg-content-rgb: 255, 255, 255;
+  --esm-content-boxshadow-rgb: 255, 255, 255;
+  --esm-slidecontrol-background-rgb: 255, 255, 255;
+  --esm-slidecontrol-button: black;
+  --esm-slidecontrol-button-hover-rgb: 255, 255, 255;
+  --esm-logo-background-rgb: 0, 0, 0;
+  --esm-logo-shadow: black;
+  --esm-option-background: rgba(255, 255, 255, 0.8);
+}
+
+/* Logo */
+img.logo {
+    width: 80px;
+    box-shadow: 0px 0px 40px 0px var(--esm-logo-shadow);
+    background: rgba(var(--esm-logo-background-rgb), 0.4);
+    border-radius: 35px;
+}
+
+/* Schriftzug */
+.ephesis-regular {
+    font-family: "Ephesis", cursive;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 35px;
+    margin: 10px 0 5px 0;
+}
+.ephesis-regular-small {
+  font-family: "Ephesis", cursive;
+  font-weight: 200;
+  font-style: normal;
+  font-size: 20px;
+}
+.row-tabs {
+    margin-top: 10px;
+}
+
+/* Slideshow styles */
+.background-slideshow {
+  inset: 0;
+  z-index: 0 !important; 
+  overflow: hidden;
+  pointer-events: none;   
+  user-select: none;      
+}
+.background-slideshow img {
+  position: absolute;
+  inset: 0;
+  width: 100vw;
+  height: 100vh;
+  object-fit: cover;
+  opacity: 0;
+  transition: opacity 1s;
+  pointer-events: none;
+}
+.background-slideshow img.active {
+  opacity: 1;
+  z-index: 1;
+}
+.slideshow-controls {
+  position: absolute;
+  left: 20px;
+  bottom: 20px;
+  z-index: 2;
+  display: flex;
+  gap: 8px;
+  background: rgba(var(--esm-slidecontrol-background-rgb),0.4);
+  border-radius: 8px;
+  padding: 6px 12px;
+  align-items: center; /* NEU: vertikal mittig */
+  pointer-events: auto !important; /* Nur die Steuerung ist klickbar */
+}
+.slideshow-controls button {
+    background: none;
+    border: none;
+    color: var(--esm-slidecontrol-button);
+    font-size: 1.7em;
+    cursor: pointer;
+    padding: 2px 8px;
+    transition: background 0.2s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 1.5em;
+    width: 1.5em;
+}
+.slideshow-controls button span.bx {
+  font-size: 1em;
+  width: 1em;
+  height: 1em;
+  display: inline-block;
+  vertical-align: middle;
+}
+.slideshow-controls button:hover {
+  background: rgba(var(--esm-slidecontrol-button-hover-rgb), 0.2);
+}
+
+.background-slideshow {
+  z-index: 0 !important;
+  pointer-events: none;
+  user-select: none;
+}
+.slideshow-controls {
+  pointer-events: auto !important;
+  z-index: 2 !important;
+}
+
+.layout-wrapper, .layout-container {
+    z-index: 1 !important;
+}
+
+/* Zentrierte und transparente Content-Box */
+.centered-content-wrapper {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.tab-content {
+    margin-top: 20px;
+}
+.content {
+  min-height: 500px;
+  border-radius: 18px;
+  background: rgba(var(--esm-bg-content-rgb),0.75);
+  box-shadow: 0 4px 32px rgba(var(--esm-content-boxshadow-rgb),0.25);
+  padding: 2.5rem 2rem;
+  width: 100%;
+}
+
+/* Margin für Überschriften */
+.my-2 {
+  margin-block-start: -0.5rem !important;
+  margin-block-end: 2.5rem !important;
+}
+
+/* Konsole */
+.console {
+  background: rgba(30,30,30,0.7);
+  color: #eee;
+  font-family: monospace;
+  font-size: 0.95em;
+  border-radius: 8px;
+  padding: 0.75em 1em;
+  min-height: 60px;
+  max-height: 200px;
+  overflow-y: auto;
+}
+
+.console-line { 
+  margin-bottom: 2px; 
+}
+.progress {
+    height: 15px;
+}
+select option {
+    background-color: var(--esm-option-background) !important;
+}
+/* Button-Alignment für Backup/Schedule */
+.backup-btn-row, .schedule-btn-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.backup-btn-row .btn-group,
+.schedule-btn-row .btn-group {
+  margin-left: auto;
+}
+
+/* Sprach-Select mit Flaggen-Icon */
+.fi {
+  vertical-align: middle;
+}
+.fib,
+.fi {
+  background-size: contain;
+  background-position: 50%;
+  background-repeat: no-repeat;
+}
+.fi {
+  position: relative;
+  display: inline-block;
+  width: 1.333333em;
+  line-height: 1em;
+}
+.fi:before {
+  content: " ";
+}
+.fi.fis {
+  width: 1em;
+}
+
+#languageSelect option {
+  padding-left: 2em;
+  background-repeat: no-repeat;
+  background-position: 0.5em center;
+}
+#languageSelect option[value="de"] { background-image: url('../flags/de.svg'); }
+#languageSelect option[value="en"] { background-image: url('../flags/gb.svg'); }
+#languageSelect option[value="ru"] { background-image: url('../flags/ru.svg'); }
+#languageSelect option[value="es"] { background-image: url('../flags/es.svg'); }
+#languageSelect option[value="it"] { background-image: url('../flags/it.svg'); }
+#languageSelect option[value="fr"] { background-image: url('../flags/fr.svg'); }
+#languageSelect option[value="pt"] { background-image: url('../flags/pt.svg'); }
+#languageSelect option[value="nl"] { background-image: url('../flags/nl.svg'); }
+#languageSelect option[value="zh"] { background-image: url('../flags/cn.svg'); }
+#languageSelect option[value="ja"] { background-image: url('../flags/jp.svg'); }
+#languageSelect option[value="ko"] { background-image: url('../flags/kr.svg'); }

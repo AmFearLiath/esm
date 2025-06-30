@@ -1,0 +1,17 @@
+{
+    "ftpServer": "",
+    "ftpPort": "",
+    "ftpUser": "",
+    "ftpPass": "",
+    "ftpDir": "/savegame",
+    "lang": "en",
+    "theme": "dark",
+    "slideshow": "on",
+    "backupLocalPath": "",
+    "backupRotation": "5",
+    "backupZip": "1",
+    "backupSchedule": "",
+    "scheduleSavegame": "",
+    "scheduleSchedule": "",
+    "scheduleLocalSavegame": ""
+}
