@@ -28,7 +28,16 @@ Download the tool as a ZIP file from your repository or release.
 - Install XAMPP (recommended: default path `C:\xampp`).
 - Start the XAMPP Control Panel.
 
-### 3. **Unpack and set up ESM**
+### 3. **Configure XAMPP**
+
+- in XAMPP Control Panel click on `Config` for Apache
+- Select PHP (php.ini)
+- Search for ;extension=zip
+- Remove the ;
+- Result: extension=zip
+- Save the file
+
+### 4. **Unpack and set up ESM**
 
 - Unpack the ESM tool into the folder:
 `C:\xampp\htdocs\ESM`
@@ -49,7 +58,7 @@ The subfolders `logs` and `pids` will be created automatically on first start if
 
 ## Start the environment
 
-1. **Start the XAMPP Control Panel**
+1. **Open the XAMPP Control Panel**
 2. **Start Apache**
 3. **Open your browser** and go to:
 [http://localhost/ESM/](http://localhost/ESM/)
