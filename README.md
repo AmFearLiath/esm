@@ -33,7 +33,7 @@ Download the tool as a ZIP file from your repository or release.
 - Unpack the ESM tool into the folder:
 `C:\xampp\htdocs\ESM`
 - The structure should look like this:
-´´´
+```
 C:\xampp\htdocs\ESM
 ├── /assets
 ├── /locales
@@ -43,7 +43,7 @@ C:\xampp\htdocs\ESM
 ├── config.json
 ├── index.php
 └── readme.md
-´´´
+```
 The subfolders `logs` and `pids` will be created automatically on first start if they do not exist.
 ---
 
