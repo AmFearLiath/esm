@@ -37,10 +37,14 @@ Ideal für alle, die ihre Enshrouded-Serverdaten sicher und komfortabel verwalte
     ├── /assets
     ├── /locales
     ├── /script
+    │   ├── /logs
+    │   └── /pids
     ├── config.json
     ├── index.php
     └── readme.md
 ```
+Die Unterordner `logs` und `pids` werden beim ersten Start automatisch
+angelegt, falls sie nicht existieren.
 ---
 
 ## Umgebung starten
