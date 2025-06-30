@@ -50,7 +50,7 @@ angelegt, falls sie nicht existieren.
 ## Umgebung starten
 
 1. **Starte XAMPP Control Panel**
-2. **Starte Apache** (und optional MySQL, falls benötigt)
+2. **Starte Apache**
 3. **Öffne deinen Browser** und rufe auf:  
  [http://localhost/ESM/](http://localhost/ESM/)
 
@@ -110,23 +110,17 @@ Der Scheduler ist für Nutzer gedacht, die regelmäßig einen bestimmten Speiche
 
 **So gehst du vor:**
 
-1. **Savegame bereitstellen:**  
-   Lege das gewünschte lokale Savegame (z.B. `3ad85aea-1`) auf deinem Rechner ab.
-
-2. **Pfad zum Savegame angeben:**  
+- **Pfad zum Savegame angeben:**  
    Gib im Feld „Lokaler Savegame-Pfad“ den vollständigen Pfad zu deiner Savegame-Datei an (z.B. `C:\Pfad\zum\Savegame\3ad85aea-1`).
 
-3. **Savegame wird erkannt:**  
+- **Savegame wird erkannt:**  
    Die Savegame-Nummer wird automatisch aus dem Dateinamen erkannt und im entsprechenden Feld angezeigt (dieses Feld ist schreibgeschützt).
 
-4. **Wiederholungszeit festlegen:**  
+- **Wiederholungszeit festlegen:**  
    Gib an, in welchem Intervall oder zu welchen Uhrzeiten das Savegame auf den Server übertragen werden soll (z.B. `every 3600s` oder `03:00, 15:00`).
 
-5. **Scheduler starten:**  
+- **Scheduler starten:**  
    Starte den Scheduler. Das Tool überträgt dann automatisch in den gewünschten Abständen das angegebene Savegame auf den Server und setzt die Indexdatei entsprechend.
-
-**Konsole:**  
-Zeigt Status, Fortschritt und Fehler des Schedulers an.
 
 ---
 
