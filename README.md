@@ -32,6 +32,7 @@ Ideal für alle, die ihre Enshrouded-Serverdaten sicher und komfortabel verwalte
 - Entpacke das ESM-Tool in den Ordner:  
   `C:\xampp\htdocs\ESM`
 - Die Struktur sollte so aussehen:
+```
     C:\xampp\htdocs\ESM
     ├── /assets
     ├── /locales
@@ -39,7 +40,7 @@ Ideal für alle, die ihre Enshrouded-Serverdaten sicher und komfortabel verwalte
     ├── config.json
     ├── index.php
     └── readme.md
-
+```
 ---
 
 ## Umgebung starten
