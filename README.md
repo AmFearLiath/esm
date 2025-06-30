@@ -86,11 +86,6 @@ Here you can configure the basic settings:
 - **FTP User/Password:** Login credentials for FTP access
 - **Savegame Directory:** Usually /savegame (depending on the server)
 - **Design:** Language, Theme (light/dark), Slideshow (background images)
-- **Backup Location:** Local path where backups are stored
-- **Backup Rotation:** How many backups are kept (older ones are deleted)
-- **Zip Backup:** Should backups be saved as a ZIP file?
-- **Backup Schedule:** When/how often a backup is made (see below)
-- **Scheduler Options:** Savegame number and schedule for scheduled tasks
 
 ---
 
