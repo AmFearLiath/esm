@@ -28,7 +28,7 @@ Download the tool as a ZIP file from your repository or release.
 - Install XAMPP (recommended: default path `C:\xampp`).
 - Start the XAMPP Control Panel.
 
-### 3. **Configure XAMPP**
+### 3. **Configure XAMPP** (optional, if you want to zip your backups)
 
 - in XAMPP Control Panel click on `Config` for Apache
 - Select PHP (php.ini)
