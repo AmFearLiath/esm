@@ -1,0 +1,10 @@
+[2025-06-30 04:07:20] EVENT:schedulerStarted
+[2025-06-30 04:07:20] EVENT:writePID: 19856
+[2025-06-30 04:07:20] EVENT:schedulerLoopStarted: 1
+[2025-06-30 04:07:21] EVENT:ftpConnectionOk
+[2025-06-30 04:07:21] EVENT:latestSet: 6
+[2025-06-30 04:07:21] EVENT:fileUpdated:/savegame/3ad85aea-index
+[2025-06-30 04:07:24] EVENT:savegameUploaded:/savegame/3ad85aea-6
+[2025-06-30 04:07:24] EVENT:schedulerTaskCompleted
+[2025-06-30 04:07:24] EVENT:schedulerNextInterval:04:08:24
+[2025-06-30 04:07:30] EVENT:backupStopped

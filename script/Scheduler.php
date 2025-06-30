@@ -8,14 +8,6 @@ class Scheduler {
         $this->config = $config;
         $this->logFile = __DIR__ . '/logs/scheduler.log';
         $this->pidFile = __DIR__ . '/pids/scheduler.pid';
-
-        // Ensure required directories exist
-        if (!is_dir(dirname($this->logFile))) {
-            @mkdir(dirname($this->logFile), 0777, true);
-        }
-        if (!is_dir(dirname($this->pidFile))) {
-            @mkdir(dirname($this->pidFile), 0777, true);
-        }
     }
 
     public function validateConfig() {
@@ -47,8 +39,18 @@ class Scheduler {
     }
 
     public function stop() {
-        if ($this->isRunning()) unlink($this->pidFile);
-        $this->log("EVENT:schedulerStopped");
+        if ($this->isRunning()) {
+            $pid = (int)@file_get_contents($this->pidFile);
+            if ($pid) {
+                if (strtoupper(substr(PHP_OS, 0, 3)) === 'WIN') {
+                    exec("taskkill /F /PID $pid");
+                } else {
+                    exec("kill $pid");
+                }
+            }
+            @unlink($this->pidFile);
+        }
+        $this->log("EVENT:backupStopped");
         return true;
     }
 

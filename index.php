@@ -49,14 +49,14 @@
           <div class="content-wrapper">
             <div class="content">
               <div class="row row-title g-6">
-                <div class="col-xl-1">
+                <div class="col-md-2 col-xl-1">
                   <img src="assets/img/logo.png" alt="Logo" class="logo" />
                 </div>
-                <div class="col-xl-4">
+                <div class="col-md-10 col-xl-4">
                   <h5 class="ephesis-regular" id="esm-title">Enshrouded Server Manager</h5>
                   <span class="ephesis-regular-small" id="esm-author">by Liath</span>
                 </div>
-                <div class="col-xl-7">
+                <div class="col-md-12 col-xl-7">
                   <div id="alert" class="alert alert-primary d-none" role="alert">
                     <p class="mb-0" id="alert-message"></p>
                   </div>
@@ -90,7 +90,7 @@
                       <div class="tab-pane fade show active" id="nav-backup-manager" role="tabpanel">
                         <form id="backupForm" autocomplete="off">
                           <div class="row">
-                            <div class="mb-3 col-xl-6">
+                            <div class="mb-3 col-md-6 col-xl-6">
                               <label for="backupLocalPath" class="form-label" data-i18n="backup.localPath"></label>
                               <div class="input-group">
                                 <input type="text" class="form-control" id="backupLocalPath" required>
@@ -99,18 +99,18 @@
                                 </button>
                               </div>
                             </div>
-                            <div class="mb-3 col-xl-6">
+                            <div class="mb-3 col-md-6 col-xl-6">
                               <label for="backupZip" class="form-label" data-i18n="backup.zip"></label>
                               <select class="form-select" id="backupZip">
                                 <option value="1" data-i18n="yes"></option>
                                 <option value="0" data-i18n="no"></option>
                               </select>
                             </div>
-                            <div class="mb-3 col-xl-6">
+                            <div class="mb-3 col-md-6 col-xl-6">
                               <label for="backupRotation" class="form-label" data-i18n="backup.rotation"></label>
                               <input type="number" class="form-control" id="backupRotation" min="1" max="99" value="5" required>
                             </div>
-                            <div class="mb-3 col-xl-6">
+                            <div class="mb-3 col-md-6 col-xl-6">
                               <label for="backupSchedule" class="form-label" data-i18n="backup.schedule"></label>
                               <input type="text" class="form-control" id="backupSchedule" placeholder="e.g. 02:00, 14:00 or every 3600s">
                             </div>
@@ -138,11 +138,11 @@
                       <div class="tab-pane fade" id="nav-schedule-manager" role="tabpanel">
                         <form id="scheduleForm" autocomplete="off">
                           <div class="row">
-                            <div class="mb-3 col-xl-8">
+                            <div class="mb-3 col-md-8 col-xl-8">
                               <label for="scheduleLocalSavegame" class="form-label" data-i18n="schedule.scheduleLocalSavegame"></label>
                               <input type="text" class="form-control" id="scheduleLocalSavegame" placeholder="z.B. C:\Pfad\zum\Savegame\3ad85aea-1" required>
                             </div>
-                            <div class="mb-3 col-xl-4">
+                            <div class="mb-3 col-md-4 col-xl-4">
                               <label for="scheduleSavegame" class="form-label" data-i18n="schedule.savegame"></label>
                               <input type="number" class="form-control" id="scheduleSavegame" min="0" max="9" readonly required>
                             </div>
@@ -170,19 +170,19 @@
                         <form id="optionsForm" autocomplete="off">
                           <fieldset class="row mb-4">
                             <legend data-i18n="options.ftp"></legend>
-                            <div class="mb-2 col-xl-10">
+                            <div class="mb-2 col-md-8 col-xl-10">
                               <label for="ftpServer" class="form-label" data-i18n="options.ftpServer"></label>
                               <input type="text" class="form-control" id="ftpServer" required>
                             </div>
-                            <div class="mb-2 col-xl-2">
+                            <div class="mb-2 col-md-4 col-xl-2">
                               <label for="ftpPort" class="form-label" data-i18n="options.ftpPort"></label>
                               <input type="number" class="form-control" id="ftpPort" value="21" required>
                             </div>
-                            <div class="mb-2 col-xl-6">
+                            <div class="mb-2 col-md-6 col-xl-6">
                               <label for="ftpUser" class="form-label" data-i18n="options.ftpUser"></label>
                               <input type="text" class="form-control" id="ftpUser" required>
                             </div>
-                            <div class="mb-2 col-xl-6">
+                            <div class="mb-2 col-md-6 col-xl-6">
                               <label for="ftpPass" class="form-label" data-i18n="options.ftpPass"></label>
                               <input type="password" class="form-control" id="ftpPass" required>
                             </div>
@@ -194,7 +194,7 @@
                           <fieldset class="mb-4">
                             <legend data-i18n="options.design"></legend>
                             <div class="row">
-                              <div class="mb-2 col-xl-4">
+                              <div class="mb-2 col-md-4 col-xl-4">
                                 <label for="languageSelect" class="form-label" data-i18n="options.language"></label>
                                 <div class="input-group">
                                   <select class="form-select" id="languageSelect" aria-label="Language"></select>
@@ -203,14 +203,14 @@
                                   </span>
                                 </div>
                               </div>
-                              <div class="mb-2 col-xl-4">
+                              <div class="mb-2 col-md-4 col-xl-4">
                                 <label for="themeSelect" class="form-label" data-i18n="options.theme"></label>
                                 <select class="form-select" id="themeSelect">
                                   <option value="dark" data-i18n="options.dark"></option>
                                   <option value="light" data-i18n="options.light"></option>
                                 </select>
                               </div>
-                              <div class="mb-2 col-xl-4">
+                              <div class="mb-2 col-md-4 col-xl-4">
                                 <label for="slideshowSelect" class="form-label" data-i18n="options.slideshow"></label>
                                 <select class="form-select" id="slideshowSelect">
                                   <option value="on" data-i18n="yes"></option>

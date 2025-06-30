@@ -5,9 +5,6 @@ $config = json_decode(file_get_contents(__DIR__ . '/../config.json'), true);
 $pidFile = __DIR__ . '/pids/scheduler.pid';
 $logFile = __DIR__ . '/logs/scheduler.log';
 
-@mkdir(dirname($pidFile), 0777, true);
-@mkdir(dirname($logFile), 0777, true);
-
 function logmsg($msg) {
     global $logFile;
     file_put_contents($logFile, "[".date('Y-m-d H:i:s')."] $msg\n", FILE_APPEND);
@@ -50,7 +47,7 @@ $loop = 0;
 while (file_exists($pidFile)) {
     file_put_contents($pidFile, getmypid());
     $loop++;
-    logmsg("Scheduler-Loop #$loop gestartet");
+    logmsg("EVENT:schedulerLoopStarted: $loop");
 
     // --- Prüfe Konfiguration ---
     $required = ['ftpServer','ftpPort','ftpUser','ftpPass','ftpDir','scheduleSavegame','scheduleSchedule'];
@@ -146,7 +143,8 @@ while (file_exists($pidFile)) {
     $schedule = $config['scheduleSchedule'];
     if (preg_match('/^(\d+)\s*s?$/i', trim($schedule)) || preg_match('/every\s+(\d+)\s*s?/i', trim($schedule))) {
         $interval = getInterval($schedule);
-        logmsg("EVENT:schedulerNextInterval: $interval");
+        $nextTime = date('H:i:s', time() + $interval);
+        logmsg("EVENT:schedulerNextInterval:$nextTime");
         sleep($interval);
     } elseif (preg_match('/^(\d{1,2}:\d{2})(,\s*\d{1,2}:\d{2})*$/', trim($schedule))) {
         $next = getNextTime($schedule);

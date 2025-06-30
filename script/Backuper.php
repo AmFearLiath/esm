@@ -8,14 +8,6 @@ class Backuper {
         $this->config = $config;
         $this->logFile = __DIR__ . '/logs/backup.log';
         $this->pidFile = __DIR__ . '/pids/backup.pid';
-
-        // Ensure required directories exist
-        if (!is_dir(dirname($this->logFile))) {
-            @mkdir(dirname($this->logFile), 0777, true);
-        }
-        if (!is_dir(dirname($this->pidFile))) {
-            @mkdir(dirname($this->pidFile), 0777, true);
-        }
     }
 
     public function validateConfig() {
@@ -41,12 +33,7 @@ class Backuper {
     }
 
     public function isRunning() {
-        if (!file_exists($this->pidFile)) return false;
-        $pid = (int)@file_get_contents($this->pidFile);
-        if ($pid && $this->isProcessRunning($pid)) return true;
-        // Prozess läuft nicht mehr, PID-File aufräumen
-        @unlink($this->pidFile);
-        return false;
+        return file_exists($this->pidFile);
     }
 
     public function start() {

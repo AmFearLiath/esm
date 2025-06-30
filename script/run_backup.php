@@ -5,26 +5,11 @@ $config = json_decode(file_get_contents(__DIR__ . '/../config.json'), true);
 $pidFile = __DIR__ . '/pids/backup.pid';
 $logFile = __DIR__ . '/logs/backup.log';
 
-@mkdir(dirname($pidFile), 0777, true);
-@mkdir(dirname($logFile), 0777, true);
-
 function logmsg($msg) {
     global $logFile;
     file_put_contents($logFile, "[".date('Y-m-d H:i:s')."] $msg\n", FILE_APPEND);
 }
 
-// Nur ein Prozess gleichzeitig
-if (file_exists($pidFile)) {
-    $oldPid = (int)@file_get_contents($pidFile);
-    if ($oldPid && strtoupper(substr(PHP_OS, 0, 3)) === 'WIN') {
-        exec("tasklist /FI \"PID eq $oldPid\"", $output);
-        if (isset($output[1]) && strpos($output[1], (string)$oldPid) !== false) {
-            logmsg("WARN:oldProcessRunning:$oldPid");
-            exit;
-        }
-    }
-    @unlink($pidFile);
-}
 file_put_contents($pidFile, getmypid());
 logmsg("EVENT:writePID: " . getmypid());
 
@@ -51,11 +36,8 @@ function getNextTime($schedule) {
 }
 
 $loop = 0;
-while (true) {
-    // Schreibe PID-File immer wieder, damit es nicht verloren geht
-    file_put_contents($pidFile, getmypid());
-
-    if (!file_exists($pidFile)) break;
+while (file_exists($pidFile)) {
+    file_put_contents($pidFile, getmypid());    
     $loop++;
     logmsg("EVENT:backupLoopStarted:$loop");
 

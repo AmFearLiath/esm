@@ -79,10 +79,6 @@ function renderConsole(log, consoleId) {
   const consoleDiv = document.getElementById(consoleId);
   const consoleProgress = document.getElementById('consoleProgress');
   consoleDiv.innerHTML = "";
-  if (consoleProgress) {
-    consoleProgress.style.width = "0%";
-    consoleProgress.innerText = "0%";
-  }
 
   // Hilfsfunktion für korrektes Parsen von key:param (alles nach erstem : als param)
   function extractKeyParam(str, prefixLen) {
