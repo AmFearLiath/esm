@@ -5,6 +5,9 @@ $config = json_decode(file_get_contents(__DIR__ . '/../config.json'), true);
 $pidFile = __DIR__ . '/pids/scheduler.pid';
 $logFile = __DIR__ . '/logs/scheduler.log';
 
+@mkdir(dirname($pidFile), 0777, true);
+@mkdir(dirname($logFile), 0777, true);
+
 function logmsg($msg) {
     global $logFile;
     file_put_contents($logFile, "[".date('Y-m-d H:i:s')."] $msg\n", FILE_APPEND);
