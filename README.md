@@ -1,146 +1,150 @@
 # Enshrouded Server Manager (ESM)
 
-## Was ist das?
+## What is it?
 
-**Enshrouded Server Manager (ESM)** ist ein webbasiertes Verwaltungstool für Enshrouded-Server-Spielstände.  
-Das Tool ermöglicht dir:
-- **Automatisierte Backups** deiner Savegames per FTP (mit Rotation und Zeitplan)
-- **Automatisierter Reset** setzt regelmäßig dein Savegame auf eine gewünschte Datei zurück.
-- **Komfortable Konfiguration** über eine moderne Weboberfläche
-- **Mehrsprachigkeit** und ein anpassbares Design
+**Enshrouded Server Manager (ESM)** is a web-based management tool for Enshrouded Server save games.
+The tool enables you to:
+- **Automated backups** of your save games via FTP (with rotation and schedule)
+- **Automated reset** regularly restores your save game to a desired file.
+- **Convenient configuration** via a modern web interface
+- **Multilingual support** and a customizable design
 
-Ideal für alle, die ihre Enshrouded-Serverdaten sicher und komfortabel verwalten möchten!
-
----
-
-## Vorbereitung
-
-### 1. **Benötigte Software herunterladen**
-
-- **XAMPP für Windows:**  
-  [https://www.apachefriends.org/de/download.html](https://www.apachefriends.org/de/download.html)
-- **Enshrouded Server Manager (ESM):**  
-  Lade das Tool als ZIP von deinem Repository oder Release herunter.
-
-### 2. **XAMPP installieren**
-
-- Installiere XAMPP (empfohlen: Standardpfad `C:\xampp`).
-- Starte das XAMPP Control Panel.
-
-### 3. **ESM entpacken und einrichten**
-
-- Entpacke das ESM-Tool in den Ordner:  
-  `C:\xampp\htdocs\ESM`
-- Die Struktur sollte so aussehen:
-```
-    C:\xampp\htdocs\ESM
-    ├── /assets
-    ├── /locales
-    ├── /script
-    │   ├── /logs
-    │   └── /pids
-    ├── config.json
-    ├── index.php
-    └── readme.md
-```
-Die Unterordner `logs` und `pids` werden beim ersten Start automatisch
-angelegt, falls sie nicht existieren.
----
-
-## Umgebung starten
-
-1. **Starte XAMPP Control Panel**
-2. **Starte Apache**
-3. **Öffne deinen Browser** und rufe auf:  
- [http://localhost/ESM/](http://localhost/ESM/)
+Ideal for anyone who wants to manage their Enshrouded Server data securely and conveniently!
 
 ---
 
-## Funktionsweise
+## Preparation
 
-- Das Tool läuft komplett lokal auf deinem Rechner im Browser.
-- Es nutzt PHP-Skripte, um Backups und geplante Aufgaben im Hintergrund auszuführen.
-- Die Konfiguration erfolgt über die Weboberfläche und wird in einer `config.json` gespeichert.
-- Backups werden per FTP von deinem Enshrouded-Server heruntergeladen und lokal gespeichert.
-- Die Oberfläche ist mehrsprachig und kann optisch angepasst werden.
+### 1. **Download required software**
+
+- **XAMPP for Windows:**
+[https://www.apachefriends.org/de/download.html](https://www.apachefriends.org/de/download.html)
+
+- **Enshrouded Server Manager (ESM):**
+Download the tool as a ZIP file from your repository or release.
+
+### 2. **Install XAMPP**
+
+- Install XAMPP (recommended: default path `C:\xampp`).
+- Start the XAMPP Control Panel.
+
+### 3. **Unpack and set up ESM**
+
+- Unpack the ESM tool into the folder:
+`C:\xampp\htdocs\ESM`
+- The structure should look like this:
+´´´
+C:\xampp\htdocs\ESM
+├── /assets
+├── /locales
+├── /script
+│ ├── /logs
+│ └── /pids
+├── config.json
+├── index.php
+└── readme.md
+´´´
+The subfolders `logs` and `pids` will be created automatically on first start if they do not exist.
+---
+
+## Start the environment
+
+1. **Start the XAMPP Control Panel**
+2. **Start Apache**
+3. **Open your browser** and go to:
+[http://localhost/ESM/](http://localhost/ESM/)
 
 ---
 
-## Bedienungsanleitung
+## How it works
 
-### **1. Optionen (Tab: Optionen)**
+- The tool runs completely locally on your computer in the browser.
+- It uses PHP scripts to perform backups and scheduled tasks in the background.
+- Configuration is done via the web interface and is saved in a `config.json` file.
+- Backups are downloaded via FTP from your Enshrouded server and stored locally.
+- The interface is multilingual and can be visually customized.
 
-Hier stellst du die grundlegenden Einstellungen ein:
+---
 
-- **FTP-Server:** Adresse deines Enshrouded-Servers (z.B. `38.242.208.125`)
-- **FTP-Port:** Meist `21` oder wie vom Hoster angegeben
-- **FTP-Benutzer/Passwort:** Zugangsdaten für den FTP-Zugang
-- **Savegame-Verzeichnis:** Meist `/savegame` (je nach Server)
-- **Design:** Sprache, Theme (hell/dunkel), Slideshow (Hintergrundbilder)
-- **Backup-Speicherort:** Lokaler Pfad, wo die Backups abgelegt werden
-- **Backup-Rotation:** Wie viele Backups behalten werden (ältere werden gelöscht)
-- **Backup zippen:** Sollen die Backups als ZIP gespeichert werden?
-- **Backup-Zeitplan:** Wann/wie oft ein Backup gemacht wird (siehe unten)
-- **Scheduler-Optionen:** Savegame-Nummer und Zeitplan für geplante Aufgaben
+## User manual
+
+### **1. Options (Tab: Options)**
+
+Here you can configure the basic settings:
+
+- **FTP Server:** Address of your Enshrouded server (e.g., 38.242.208.125)
+- **FTP Port:** Usually 21 or as specified by the host
+- **FTP User/Password:** Login credentials for FTP access
+- **Savegame Directory:** Usually /savegame (depending on the server)
+- **Design:** Language, Theme (light/dark), Slideshow (background images)
+- **Backup Location:** Local path where backups are stored
+- **Backup Rotation:** How many backups are kept (older ones are deleted)
+- **Zip Backup:** Should backups be saved as a ZIP file?
+- **Backup Schedule:** When/how often a backup is made (see below)
+- **Scheduler Options:** Savegame number and schedule for scheduled tasks
 
 ---
 
 ### **2. Backuper (Tab: Backups)**
 
-Hier steuerst du die automatischen Backups:
+Here you control the automatic backups:
 
-- **Start:** Startet den Backup-Prozess im Hintergrund
-- **Stop:** Beendet den laufenden Backup-Prozess
-- **Neustarten:** Stoppt und startet den Backup-Prozess neu
-- **Backup-Zeitplan:**  
-  - **Sekunden-Intervall:** z.B. `every 3600s` (alle 3600 Sekunden)
-  - **Uhrzeiten:** z.B. `03:00, 15:00` (Backups um 3:00 und 15:00 Uhr)
-- **Backup-Rotation:** Wie viele Backups behalten werden
-- **ZIP:** Ob die Backups als ZIP gespeichert werden
+- **Start:** Starts the backup process in the background
+- **Stop:** Ends the running backup process
+- **Restart:** Stops and restarts the backup process
+- **Backup Schedule:**
+- **Seconds Interval:** e.g., `every 3600s` (every 3600 seconds)
+- **Times:** e.g., `03:00, 15:00` (backups at 3:00 and 15:00)
+- **Backup Rotation:** How many backups are kept
+- **ZIP:** Whether the backups are saved as ZIP files
 
-**Konsole:**  
-Zeigt Status, Fortschritt und Fehler der Backups an.  
-Das nächste geplante Backup wird angezeigt.
+**Console:**
+Displays the status, progress, and errors of the backups.
+
+The next scheduled backup is displayed.
 
 ---
 
 ### **3. Scheduler (Tab: Scheduler)**
 
-Der Scheduler ist für Nutzer gedacht, die regelmäßig einen bestimmten Speicherstand auf dem Server bereitstellen möchten (z.B. für einen Lagerserver oder zum Zurücksetzen auf einen bestimmten Spielstand).
+The scheduler is intended for users who want to regularly make a specific save game available on the server (e.g., for a storage server or to reset to a specific game state).
 
-**So gehst du vor:**
+**Here's how:**
 
-- **Pfad zum Savegame angeben:**  
-   Gib im Feld „Lokaler Savegame-Pfad“ den vollständigen Pfad zu deiner Savegame-Datei an (z.B. `C:\Pfad\zum\Savegame\3ad85aea-1`).
+- **Specify the save game path:**
 
-- **Savegame wird erkannt:**  
-   Die Savegame-Nummer wird automatisch aus dem Dateinamen erkannt und im entsprechenden Feld angezeigt (dieses Feld ist schreibgeschützt).
+In the "Local save game path" field, enter the full path to your save game file (e.g., `C:\Path\to\Savegame\3ad85aea-1`).
 
-- **Wiederholungszeit festlegen:**  
-   Gib an, in welchem Intervall oder zu welchen Uhrzeiten das Savegame auf den Server übertragen werden soll (z.B. `every 3600s` oder `03:00, 15:00`).
+- **Save game is recognized:**
 
-- **Scheduler starten:**  
-   Starte den Scheduler. Das Tool überträgt dann automatisch in den gewünschten Abständen das angegebene Savegame auf den Server und setzt die Indexdatei entsprechend.
+The save game number is automatically recognized from the file name and displayed in the corresponding field (this field is read-only).
 
----
+- **Set the repetition time:**
 
-## Fehlerbehebung
+Specify the interval or time at which the save game should be transferred to the server (e.g., `every 3600s` or `03:00, 15:00`).
 
-- **Backup/Scheduler startet nicht:**  
-  Prüfe die FTP-Daten und ob der Server erreichbar ist.
-- **Buttons reagieren nicht:**  
-  Seite neu laden, ggf. Browser-Cache leeren.
-- **PHP-Fehler:**  
-  Prüfe das XAMPP-Log (`C:\xampp\apache\logs\error.log`).
+- **Start Scheduler:**
+Start the scheduler. The tool will then automatically transfer the specified save game to the server at the desired intervals and set the index file accordingly.
 
 ---
 
-## Sicherheit
+## Troubleshooting
 
-- Das Tool ist für den lokalen Gebrauch gedacht.
-- Gib deine FTP-Daten nicht an Dritte weiter.
-- Setze ein starkes Passwort für deinen FTP-Zugang.
+- **Backup/Scheduler doesn't start:**
+Check the FTP credentials and whether the server is accessible.
+- **Buttons don't respond:**
+Reload the page, clear your browser cache if necessary.
+- **PHP error:**
+Check the XAMPP log (`C:\xampp\apache\logs\error.log`).
 
 ---
 
-Viel Spaß mit dem Enshrouded Server Manager!
+## Security
+
+- This tool is intended for local use.
+- Do not share your FTP credentials with third parties.
+- Set a strong password for your FTP access.
+
+---
+
+Have fun with the Enshrouded Server Manager!
