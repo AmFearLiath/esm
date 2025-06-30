@@ -5,7 +5,7 @@
 **Enshrouded Server Manager (ESM)** ist ein webbasiertes Verwaltungstool für Enshrouded-Server-Spielstände.  
 Das Tool ermöglicht dir:
 - **Automatisierte Backups** deiner Savegames per FTP (mit Rotation und Zeitplan)
-- **Geplante Aufgaben** (Scheduler) für Savegames
+- **Automatisierter Reset** setzt regelmäßig dein Savegame auf eine gewünschte Datei zurück.
 - **Komfortable Konfiguration** über eine moderne Weboberfläche
 - **Mehrsprachigkeit** und ein anpassbares Design
 
